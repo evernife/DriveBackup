@@ -42,11 +42,9 @@ public class Timer {
      * @return message
      */
     public String getUploadTimeMessage(File file) {
-        DecimalFormat df = new DecimalFormat("#.##");
         double difference = getTime();
-        double length = Double.valueOf(df.format(difference / 1000));
-        double speed = Double.valueOf(df.format((file.length() / 1024) / length));
-
+        double length   = Math.round(100 * Double.valueOf(     difference / 1000)                   ) / 100;
+        double speed    = Math.round(100 * Double.valueOf(     (file.length() / 1024) / length)     ) / 100;
         return "File uploaded in " + length + " seconds (" + speed + "KB/s)";
     }
 
