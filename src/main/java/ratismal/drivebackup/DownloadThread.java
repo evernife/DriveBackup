@@ -1,6 +1,5 @@
 package ratismal.drivebackup;
 
-import ratismal.drivebackup.ftp.FTPUploader;
 import ratismal.drivebackup.googledrive.GoogleUploader;
 import ratismal.drivebackup.util.MessageUtil;
 
@@ -29,11 +28,6 @@ public class DownloadThread implements Runnable {
             switch (service) {
                 case "googledrive":
                     GoogleUploader.downloadFile(file, type);
-                    break;
-                case "onedrive":
-                    break;
-                case "ftp":
-                    FTPUploader.downloadFile(file, type);
                     break;
                 default:
                     MessageUtil.sendConsoleMessage("Unknown service. Available services are: googledrive, onedrive, ftp");

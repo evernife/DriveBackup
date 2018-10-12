@@ -2,10 +2,8 @@ package ratismal.drivebackup;
 
 import org.bukkit.Bukkit;
 import ratismal.drivebackup.config.Config;
-import ratismal.drivebackup.ftp.FTPUploader;
 import ratismal.drivebackup.googledrive.GoogleUploader;
 import ratismal.drivebackup.handler.PlayerListener;
-import ratismal.drivebackup.onedrive.OneDriveUploader;
 import ratismal.drivebackup.util.*;
 import ratismal.drivebackup.util.Timer;
 
@@ -71,22 +69,6 @@ public class UploadThread implements Runnable {
                         MessageUtil.sendConsoleMessage("Uploading file to GoogleDrive");
                         timer.start();
                         GoogleUploader.uploadFile(file, type);
-                        timer.end();
-                        MessageUtil.sendConsoleMessage(timer.getUploadTimeMessage(file));
-                    }
-                    if (Config.isOnedriveEnabled()) {
-                        MessageUtil.sendConsoleMessage("Uploading file to OneDrive");
-                        //Couldn't get around static issue, declared a new Instance.
-                        OneDriveUploader oneDrive = new OneDriveUploader();
-                        timer.start();
-                        oneDrive.uploadFile(file, type);
-                        timer.end();
-                        MessageUtil.sendConsoleMessage(timer.getUploadTimeMessage(file));
-                    }
-                    if (Config.isFtpEnabled()) {
-                        MessageUtil.sendConsoleMessage("Uploading file to FTP");
-                        timer.start();
-                        FTPUploader.uploadFile(file, type);
                         timer.end();
                         MessageUtil.sendConsoleMessage(timer.getUploadTimeMessage(file));
                     }
