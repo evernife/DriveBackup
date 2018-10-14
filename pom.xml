@@ -53,9 +53,9 @@
             <systemPath>${project.basedir}/libs/EasyBackup.jar</systemPath>
         </dependency>
         <dependency>
-            <groupId>com.google.apis</groupId>
-            <artifactId>google-api-services-drive</artifactId>
-            <version>v2-rev200-1.21.0</version>
+            <groupId>com.google.api-client</groupId>
+            <artifactId>google-api-client</artifactId>
+            <version>1.25.0</version>
         </dependency>
         <dependency>
             <groupId>com.google.oauth-client</groupId>
