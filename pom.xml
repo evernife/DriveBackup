@@ -46,6 +46,13 @@
             <systemPath>${project.basedir}/libs/Thermos.jar</systemPath>
         </dependency>
         <dependency>
+            <groupId>EasyBackup</groupId>
+            <artifactId>EasyBackup</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/libs/EasyBackup.jar</systemPath>
+        </dependency>
+        <dependency>
             <groupId>com.google.apis</groupId>
             <artifactId>google-api-services-drive</artifactId>
             <version>v2-rev200-1.21.0</version>

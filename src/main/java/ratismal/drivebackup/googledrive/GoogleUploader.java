@@ -232,6 +232,20 @@ public class GoogleUploader {
             Drive.Files.List request = service.files().list().setQ(
                     "mimeType='application/vnd.google-apps.folder' and trashed=false");
             FileList files = request.execute();
+
+            String[] allFolders = name.split("/");
+            int foldersAmout = allFolders.length;
+
+            for (int i = 0; i < foldersAmout ; i++){
+                String currentFolder = allFolders[i];
+                boolean goodToGo = false;
+
+
+            }
+
+            if (name.contains("/")){
+
+            }
             for (File folderfiles : files.getItems()) {
                 if (folderfiles.getTitle().equals(name)) {
 
